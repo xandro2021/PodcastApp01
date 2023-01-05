@@ -31,6 +31,16 @@
         padding: 16rem 4rem 4rem 4rem;
         border-bottom: 1px solid #e1e1e1;
 
+        @include m.tablet {
+            border: none;
+            transition-property: transform;
+            transition-duration: 300ms;
+
+            &:hover {
+                transform: scale( 1.1 );
+            }
+        }
+
         .precio {
             font-size: 1.8rem;
             text-align: center;
@@ -53,10 +63,6 @@
             @include m.iconoBg( "../img/icono_inicio.svg" );
         }
 
-        &.pro {
-            @include m.iconoBg( "../img/icono_pro.svg" );
-        }
-
         &.negocio {
             background-color: v.$primario;
             order: -1;
@@ -68,7 +74,14 @@
                 margin-top: -5rem;
                 margin-bottom: -5rem;
                 border-radius: 2rem;
+                background-position: 50% calc(5rem + 2rem);
+                padding-top: calc(16rem + 5rem);
+                z-index: 100;
             }
+        }
+
+        &.pro {
+            @include m.iconoBg( "../img/icono_pro.svg" );
         }
 
     }
